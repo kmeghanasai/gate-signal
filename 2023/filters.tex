@@ -136,4 +136,25 @@ At $t = 20ms$, the magnitude of the voltage $V_o$ will be  \\
 \hfill{(GATE IN 2023)}\\
 \solution
 \pagebreak
+
+\item The value of parameters of the circuit shown in the figure are $R_1=2\ohm$,$R_2=2\ohm$,$R_3=3\ohm$,$L=10 mH$,$C=100\mu F$. For time \(t<0\), the circuit is at steady state with the switch $ 'K'$ in closed condition. If the switch is opened at $t=0$, the value of the voltage across the inductor \brak{V_L}
+ at $t=0^{+}$ in Volts is \rule{2cm}{0.4pt} (Round off to 1 decimal place).
+\begin{circuitikz}
+    \draw (0,0) to [R, R=$R_3$] (0,2);
+    \draw (0,3) to [switch, o-o, name=$K$] (0,2);
+    \draw (0,3)-- (0,4);
+    \draw (0,4) -- (4,4);
+    \draw (3,0) to [american current source, l=$10\,\text{A,}\text{DC}$] (3,4);
+    \draw (4,4) to (4,5) to (5,5) to[R, l=$R_1$] (6,5);
+    \draw (6,5) to(7,5) to[L, l=$L$] (8,5) to (9,5);
+    \draw (4,4)to (4,3)to (5,3) to[R, l=$R_2$] (6,3);
+    \draw (6,3)to (7,3) to [C, l=$C$] (8,3) to(9,3);
+    \draw (9,5) --(9,3);
+    \draw (9,4) -- (10,4);
+    \draw (10,4)-- (10,0);
+    \draw(10,0)--(0,0);
+\end{circuitikz} \hfill (GATE 2023 EE 29Q)
+\solution
+\pagebreak
+
 \end{enumerate}
