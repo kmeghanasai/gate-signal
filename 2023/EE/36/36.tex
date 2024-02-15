@@ -1,3 +1,4 @@
+/iffalse
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -70,17 +71,18 @@
     \end{enumerate}
     
     \solution
-    From~\figref{fig:1ee36}
+    \fi
+    From~\figref{fig:EEgatefig36.23}
     \begin{align}
         \abs{{H}\brak{j\omega}}&= 8 \\
         \angle H\brak{j\omega} &= \frac{-\pi}{3} \omega
     \end{align}
-    Substituting the values from~\figref{fig:1ee36}, magnitude of transfer function is:
+    Substituting the values from~\figref{fig:EEgatefig36.23}, magnitude of transfer function is:
     \begin{align}
         8 &= 20\log_{10}(\abs{{H}\brak{j\omega}})\\
         \abs{{H}\brak{j\omega}} &= 10^{0.4} = 2.511
     \end{align}
-    Substituting the values from~\figref{fig:1ee36}, The direction of the transfer function is:
+    Substituting the values from~\figref{fig:EEgatefig36.23}, The direction of the transfer function is:
     \begin{align}
         \frac{H\brak{j\omega}}{\abs{{H}\brak{j\omega}}} = e^{-j\frac{\pi}{3}\omega}
     \end{align}
@@ -88,6 +90,6 @@
         H\brak{j\omega} &= 2.511 e^{-j\frac{\pi}{3}\omega} \\
         &= 2.511 e^{-1.047s}
     \end{align}
-    \setcounter{figure}{1} % Set figure counter to 1
-\end{document}
+    \setcounter{figure}{1} 
+%\end{document}
 
