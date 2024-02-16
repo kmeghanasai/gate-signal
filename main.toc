@@ -4,8 +4,8 @@
 \contentsline {chapter}{\numberline {2}Filters}{5}{chapter.2}%
 \contentsline {chapter}{\numberline {3} Z-transform}{17}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Systems}{19}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Sequences}{35}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Sampling}{41}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Contour Integration}{47}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Laplace Transform}{49}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Fourier transform}{67}{chapter.9}%
+\contentsline {chapter}{\numberline {5}Sequences}{41}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Sampling}{47}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Contour Integration}{55}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Laplace Transform}{57}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Fourier transform}{79}{chapter.9}%
