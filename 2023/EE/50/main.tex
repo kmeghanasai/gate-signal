@@ -29,14 +29,6 @@
 \usepackage{ifthen}                                           
 \usepackage{lscape}
 
-\makeatletter
-
-\newcommand*{\underarrow}{\def\@underarrow{\relax}\@ifstar{\@@underarrow}{\def\@underarrow{\hidewidth}\@@underarrow}}
-\newcommand*{\@@underarrow}[2][]{\underset{\@underarrow\substack{\uparrow\if\relax\detokenize{#1}\relax\else\\#1\fi}\@underarrow}{#2}}
-
-\newcommand*{\overarrow}{\def\@overarrow{\relax}\@ifstar{\@@overarrow}{\def\@overarrow{\hidewidth}\@@overarrow}}
-\newcommand*{\@@overarrow}[2][]{\overset{\@overarrow\substack{\if\relax\detokenize{#1}\relax\else#1\\\fi\downarrow}\@overarrow}{#2}}
-\makeatother
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
@@ -93,7 +85,7 @@ As sampling frequency is $1Hz$ \brak{\omega=\Omega} from DTFT(discrete time four
     \implies\sum^{n=2}_{n=0}x\brak{n}e^{-j\Omega n}=\frac{1}{2}+e^{-j\Omega}+\frac{e^{-j2\Omega}}{2}
 \end{align}
 On comparing coefficients we get,\\
-x\brak{n}=\cbrak{\underarrow{\frac{1}{2}},1,\frac{1}{2}}\\
+x\brak{n}=\cbrak{\frac{1}{2},1,\frac{1}{2}}\\
 \begin{align}
     x_{p}\brak{n}&=\cbrak{\frac{1}{2},1,\frac{1}{2},0,0} \text{with period, N=5}\\
     X\brak{3}&=\frac{1}{5}\sum^{4}_{n=0}x\brak{n}e^{-\frac{j6\pi}{5}n}\\
