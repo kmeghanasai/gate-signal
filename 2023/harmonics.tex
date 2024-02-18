@@ -28,4 +28,21 @@
 \solution
 \pagebreak
 
+\item In the circuit shown below, the amplitudes of the voltage across the resistor and the capacitor are equal. What is the value of the angular frequency $\omega_o$ (in rad/s)? 
+(Round off the answer to one decimal place.)
+\begin{circuitikz}
+    % Voltage source
+    \draw (0,0) to[sV, v=$100\cos(\omega_{o} t)$] (0,2);
+    
+    % Resistor
+    \draw (0,2) to[R, l=$1\text{ k}\Omega$] (3,2);
+    
+    % Capacitor
+    \draw (3,2) to[C, l=$100\mu\text{F}$] (3,0);
+    
+    % Ground
+    \draw (3,0) -- (0,0);
+\end{circuitikz}
+\solution
+\pagebreak
 \end{enumerate}
