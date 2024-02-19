@@ -1,3 +1,4 @@
+\iffalse
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -61,10 +62,10 @@ Q: A system has transfer function
 \[\frac{Y(s)}{X(s)}=\frac {s-\pi}{s+\pi}\]
 let $u(t)$ be the unit step function. The input $x(t)$ that results in a steady-state output $y(t)=\sin(\pi t)$ is \underline{\quad}.
 \solution
-
+\fi
 \begin{figure}[htb]
   \centering
-  \input{./tikz/fig1.tex}
+  \input{2023/IN/21/tikz/fig1.tex}
   \captionsetup{justification=centering, singlelinecheck=off}
   \caption{Block diagram of the inverse system}
   \label{fig:in_21_f1}
@@ -72,7 +73,7 @@ let $u(t)$ be the unit step function. The input $x(t)$ that results in a steady-
 
 \begin{figure}[htb]
   \centering
-  \input{./tikz/fig2.tex}
+  \input{2023/IN/21/tikz/fig2.tex}
   \captionsetup{justification=centering, singlelinecheck=off}
   \caption{Block diagram of the system}
   \label{fig:in_21_f2}
@@ -80,7 +81,7 @@ let $u(t)$ be the unit step function. The input $x(t)$ that results in a steady-
 
 \begin{table}[!ht]
     \centering
-        \input{./tables/table.tex}
+        \input{2023/IN/21/tables/table.tex}
     \caption{Input parameters}
     \label{tab:in_21_t1}
 \end{table}
@@ -119,7 +120,7 @@ Therefore, by ~\eqref{eq:in.21.6} and ~\eqref{eq:in.21.8}, we get
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\columnwidth]{./figs/figure3.png} 
+  \includegraphics[width=\columnwidth]{2023/IN/21/figs/figure3.png} 
   \captionsetup{justification=centering}
   \caption{Plot of $x(t)$ and $y(t)$ taken from Python}
   \label{fig:in.21.f3}
@@ -129,17 +130,17 @@ Therefore, by ~\eqref{eq:in.21.6} and ~\eqref{eq:in.21.8}, we get
   \centering
 
   \subfigure[Amplitude of $\frac{1}{H(j\omega)}$]{
-    \includegraphics[width=0.45\linewidth]{./figs/figure1.png}
+    \includegraphics[width=0.45\linewidth]{2023/IN/21/figs/figure1.png}
     \label{fig:in.21.subfig.1}
   }
   \hfill
   \subfigure[Phase of $\frac{1}{H(j\omega)}$]{
-    \includegraphics[width=0.45\linewidth]{./figs/figure2.png}
+    \includegraphics[width=0.45\linewidth]{2023/IN/21/figs/figure2.png}
     \label{fig:in.21.subfig.2}
   }
   \caption{Amplitude and Phase of $\frac{1}{H(j\omega)}$}
   \label{fig:in.21.subfig}
 \end{figure}
 
-\end{document}
+%\end{document}
 
