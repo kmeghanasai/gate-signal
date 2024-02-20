@@ -1,0 +1,10 @@
+\begin{tikzpicture}[auto, node distance=4cm,>={Latex}]
+  % Define blocks
+  \node (input) at (0,0) {};
+  \node [draw, rectangle] (H) at (3,0) {$\frac{1}{H(s)}$}; 
+  \node (output) at (6,0) {};
+
+  % Connect blocks with right arrows
+  \draw [->] (input) -- node[midway, above] {$y(t)$} (H);
+  \draw [->] (H) -- node[midway, above] {$x(t)$} (output);
+\end{tikzpicture}
