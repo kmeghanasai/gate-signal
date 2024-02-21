@@ -8,5 +8,5 @@
 \contentsline {chapter}{\numberline {6}Sampling}{75}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Contour Integration}{83}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Laplace Transform}{87}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Fourier transform}{125}{chapter.9}%
-\contentsline {chapter}{\numberline {10}FFT}{141}{chapter.10}%
+\contentsline {chapter}{\numberline {9}Fourier transform}{129}{chapter.9}%
+\contentsline {chapter}{\numberline {10}FFT}{145}{chapter.10}%
