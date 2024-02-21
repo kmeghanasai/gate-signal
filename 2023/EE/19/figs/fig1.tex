@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=2]
+    % Draw the circle
+    \draw (0,0) circle [radius=1];
+    % Mark the points on the real axis
+    \filldraw (2/3,0) circle (1pt) node[below] {$(\frac{2}{3},0)$};
+    \filldraw (1/5,0) circle (1pt) node[below] {$(\frac{1}{5},0)$};
+    \filldraw (3,0) circle (1pt) node[below] {$(3,0)$};
+    % Circle the origin in the complex plane
+    \draw[thick,blue] (0,0) circle [radius=0.05];
+    \node[blue, below left] at (0,0) {$(0,0)$};
+    % Draw real axis
+    \draw[->] (-1.5,0) -- (3.5,0) node[right] {$\Re(z)$};
+    % Draw imaginary axis
+    \draw[->] (0,-1.5) -- (0,1.5) node[above] {$\Im(z)$};
+\end{tikzpicture}
