@@ -1,0 +1,197 @@
+%\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+%\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{float}
+\usepackage{bm}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\prt}[2]{\ensuremath{p_{#1}^{\left(#2\right)} }}        % own macro for this question
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\cond}[2]{#1\middle|#2}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+%\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand{\myaugvec}[2]{\ensuremath{\begin{amatrix}{#1}#2\end{amatrix}}}
+\providecommand{\rank}{\text{rank}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+	\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
+\providecommand{\diff}[2]{\ensuremath{\frac{d{#1}}{d{#2}}}}
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\newcommand\figref{Fig.~\ref}
+\newcommand\tabref{Table~\ref}
+\newcommand{\sinc}{\,\text{sinc}\,}
+\newcommand{\rect}{\,\text{rect}\,}
+%%
+%	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+%\newcommand{\solution}{\noindent \textbf{Solution: }}
+%\newcommand{\cosec}{\,\text{cosec}\,}
+%\numberwithin{equation}{section}
+%\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+%\makeatletter
+%\@addtoreset{figure}{problem}
+%\makeatother
+
+%\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+\bibliographystyle{IEEEtran}
+
+
+
+
+
+\bigskip
+
+%\renewcommand{\thefigure}{\theenumi}
+%\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+Q: The state equation of a second order system is \\
+$ \dot{{x}}(t) = A{x}(t)$, \quad ${x}(0)$ is the initial condition. \\
+Suppose $\lambda_1$ and $\lambda_2$ are two distinct eigenvalues of $A$, and $\nu_1$ and $\nu_2$ are the corresponding eigenvectors. For constants $\alpha_1$ and $\alpha_2$, the solution, ${x}(t)$, of the state equation is \\
+\begin{enumerate}[label=(\Alph*)]
+\item $\sum_{i=1}^{2} \alpha_ie^{\lambda_it}\bf{\nu}_i$
+\item $\sum_{i=1}^{2} \alpha_ie^{2\lambda_it}\bf{\nu}_i$
+\item $\sum_{i=1}^{2} \alpha_ie^{3\lambda_it}\bf{\nu}_i$
+\item $\sum_{i=1}^{2} \alpha_ie^{4\lambda_it}\bf{\nu}_i$
+\end{enumerate}
+\hfill{GATE EC 2023}
+
+
+\solution \\
+%$ \dot{\bm{x}}(t) = A\bm{x}(t)$ \\
+%If $\lambda$ is the eigen value of matrix A then $ \dot{\bm{x}}(t) = \lambda\bm{x}(t)$ \\
+%As there are 2 eigen values $\lambda_1$ and $\lambda_2$ of matrix A, the solution of state equation will be, \\
+%$x(t) = \sum_{i=1}^{2} \alpha_ie^{\lambda_it}\bf{\nu}_i$ \\
+%Hence, the correct option is (A). \\
+\begin{table}[!ht]
+    \centering
+        \input{tables/table}
+    \caption{input parameters}
+    \label{tab:gate23EC43.1}
+\end{table}
+
+\textbf{Theories and Proofs:} \\
+\begin{align}
+A\vec{y} &= \lambda \vec{y} 
+\end{align}
+Eigen values of inverse of a matrix is reciprocal of eigen value of the given matrix\\
+\begin{align}
+A^{-1}A\vec{y} &= A^{-1}\lambda \vec{y} \\ \implies
+\vec{y} &= \lambda A^{-1}\vec{y}  \\ \implies
+A^{-1} \vec{y} &= \frac{1}{\lambda}\vec{y} \label{eq:gate23EC43.1}
+\end{align}
+Eigen value of a matrix shifts by the same amount as that of the matrix.\\
+\begin{align}
+(A - \sigma I)\vec{y} &= A\vec{y} - \sigma I\vec{y} \\
+&= \lambda \vec{y} - \sigma \vec{y} \\
+&= (\lambda - \sigma) \vec{y} \label{eq:gate23EC43.2}
+\end{align}
+\textbf{Sol:} \\
+Using Laplace transform: \\
+Given Equation:
+\begin{align}
+\dot{{x}}(t) &= A{x}(t) \\
+\frac{d{x}(t)}{dt} &= A{x}(t) 
+\end{align}
+Taking Laplace Transform:
+\begin{align}
+\mathcal{L}\brak{\frac{d{x}(t)}{dt}} &= \mathcal{L}\brak{A{x}(t)} \\
+sX(s) - {x}(0) &= AX(s) \\
+(sI - A)X(s) &= x(0) \\
+X(s) &= (sI - A)^{-1}{x}(0) \label{eq:gate23EC43.3}
+\end{align}
+From \tabref{tab:gate23EC43.1}, we can write $x(0)$ in terms of two linearly independent variables as 
+\begin{align}
+    x(0) &= \alpha_1v_1 + \alpha_2v_2 \\
+    &= \sum_{i=1}^{2}\alpha_iv_i \label{eq:gate23EC43.4}
+\end{align}
+From \eqref{eq:gate23EC43.3}, \eqref{eq:gate23EC43.4}
+
+\begin{align}
+ X(s) &= (sI - A)^{-1}\brak{\sum_{i=1}^{2}\alpha_iv_i} \\
+ &= \sum_{i=1}^{2}(sI - A)^{-1}\alpha_iv_i
+\end{align}
+From \eqref{eq:gate23EC43.1}, \eqref{eq:gate23EC43.2}
+\begin{align}
+X(s) &=  \sum_{i=1}^{2}\frac{1}{s-\lambda_i}\brak{\alpha_iv_i} 
+\end{align}
+Now take inverse Laplace Transform
+\begin{align}
+\mathcal{L}^{-1}\brak{X(s)} &= \mathcal{L}^{-1}\brak{\sum_{i=1}^{2}\frac{1}{s-\lambda_i}\brak{\alpha_iv_i}} \\
+{x}(t) &= \sum_{i=1}^{2} e^{\lambda_it}\brak{\alpha_iv_i} 
+\end{align}
+
+Hence the answer is option (A).
+\end{document}
