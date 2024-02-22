@@ -7,7 +7,6 @@
 %\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
-\usepackage{array}
 \usepackage{xcolor}
 \usepackage{txfonts}
 \usepackage{listings}
@@ -18,7 +17,6 @@
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 \usepackage{listings}
 \usepackage{float}
-\usepackage{bm}
 
 
 
@@ -91,7 +89,7 @@
 \newcommand{\sinc}{\,\text{sinc}\,}
 \newcommand{\rect}{\,\text{rect}\,}
 %%
-%%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+%	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 %\newcommand{\solution}{\noindent \textbf{Solution: }}
 %\newcommand{\cosec}{\,\text{cosec}\,}
 %\numberwithin{equation}{section}
@@ -117,7 +115,7 @@
 %\renewcommand{\thetable}{\theenumi}
 %\renewcommand{\theequation}{\theenumi}
 
-Q: A finite impulse response (FIR) filter has only two non-zero samples in its impulse response $h[n]$, namely $h[0] = h[1] = 1$. The Discrete Time Fourier Transform (DTFT) of $h[n]$ equals $H(e^{j\omega})$, as a function of the normalized angular frequency $\omega$. For the range $\abs{\omega} \leq \pi$, $\abs{H(e^{j\omega})}$ is equal to
+A finite impulse response (FIR) filter has only two non-zero samples in its impulse response $h[n]$, namely $h[0] = h[1] = 1$. The Discrete Time Fourier Transform (DTFT) of $h[n]$ equals $H(e^{j\omega})$, as a function of the normalized angular frequency $\omega$. For the range $\abs{\omega} \leq \pi$, $\abs{H(e^{j\omega})}$ is equal to
 \begin{enumerate}
 	\item[(A)] $2\abs{\cos(\omega)}$
 	\item[(B)] $2\abs{\sin(\omega)}$
@@ -125,4 +123,22 @@ Q: A finite impulse response (FIR) filter has only two non-zero samples in its i
 	\item[(D)] $2\abs{\sin(\frac{\omega}{2})}$
 \end{enumerate}
 \hfill(GATE BM 2023)
+
+\solution
+\fi
+\begin{table}[H]
+	\input{2023/BM/17/tables/tab1.tex}
+\end{table}
+From \tabref{tab:gate23bm17.1},
+\begin{align}
+	H(e^{j\omega}) &= 1 + e^{-j\omega} \\
+	&= e^{\frac{-j\omega}{2}}(e^{\frac{j\omega}{2}} + e^{\frac{-j\omega}{2}}) \\
+	&= e^{\frac{-j\omega}{2}}(2\cos{\brak{\frac{\omega}{2}}}) \\
+	\abs{H(e^{j\omega})} &= 2\abs{\cos{\brak{\frac{\omega}{2}}}}
+\end{align}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{2023/BM/17/figs/fig1.png}
+\end{figure}
 %\end{document}
