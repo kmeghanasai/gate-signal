@@ -10,3 +10,4 @@
 \contentsline {chapter}{\numberline {8}Laplace Transform}{87}{chapter.8}%
 \contentsline {chapter}{\numberline {9}Fourier transform}{129}{chapter.9}%
 \contentsline {chapter}{\numberline {10}FFT}{145}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Filter Design}{151}{chapter.11}%
