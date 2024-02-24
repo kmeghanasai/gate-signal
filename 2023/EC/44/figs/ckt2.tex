@@ -1,0 +1,10 @@
+\begin{circuitikz}[american]
+   \draw (0,0) to [isource, l=1A] (0,4) ;
+   \draw (0,0) to [short] (3,0);
+   \draw (0,4) to [short] (9,4) to [R=25$\Omega$] (9,0) to [short] (3,0);
+   \draw (6,4) to [R = 100$\Omega$] (6,0);
+   \draw (3,4) -- ++(0,-1.5)
+   to [open, v = $V_c(0^{-})$, o-o] ++(0,-1.5) -- ++(0,-1);
+   \draw (6,1) to [short ,i = $i_L \brak{0^-}$] (6,0);
+   
+\end{circuitikz}
