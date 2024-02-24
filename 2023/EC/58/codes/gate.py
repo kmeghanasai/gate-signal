@@ -37,10 +37,11 @@ plt.gca().spines['left'].set_position(('data',0))
 
 plt.yticks([1, 2])
 
-plt.text(-0.3, 1.5, 'x2(t)', rotation=90, verticalalignment='center')
+plt.text(-0.3, 1.5, 'x_2(t)', rotation=90, verticalalignment='center')
 
 plt.xlabel('t')
 plt.grid(False)
 plt.legend()
+plt.savefig('gatefig.png')
 plt.show()
 
