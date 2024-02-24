@@ -1,0 +1,155 @@
+\iffalse
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{txfonts}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{gvv}
+\usepackage[latin1]{inputenc}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{pgf}
+\usepackage{lmodern}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{graphicx}
+\begin{document}
+\bibliographystyle{IEEEtran}
+
+\vspace{3cm}
+
+\title{}
+\author{EE23BTECH11047 - Deepakreddy P
+}
+\maketitle
+\newpage
+\bigskip
+
+\noindent \textbf{44} \quad The switch $S_1$ was closed and $S_2$ was open for a long time. At t=0,switch $S_1$ is opened and $S_2$ is closed,simultaneously. The value of $i_c(0^{+})$, in amperes, is  \hfill (GATE EC 44)
+
+\begin{figure}[ht]
+  \centering
+  \begin{adjustbox}{width=\columnwidth}
+      \input{2023/EC/44/figs/ckt1}
+  \end{adjustbox}
+  \caption{Circuit 1}
+\end{figure}
+
+\solution
+\fi
+\\
+1) Switch $S_1$ was closed and $S_2$ was open 
+\begin{figure}[ht]
+  \centering
+
+      \input{2023/EC/44/figs/ckt2}
+
+  \caption{$S_1$ is closed and $S_2$ is open}
+\end{figure}
+
+\begin{align}
+    R_{eff} &= \frac{25\brak{100}}{\brak{25+100}} \Omega \\
+    R_{eff} &= 20 \Omega 
+\end{align}
+\begin{align}
+    V_c \brak{0^-} &= 1 \brak{R_{eff}}\\
+    V_c \brak{0^-} &= 20V
+\end{align}
+
+\bigskip
+
+2) Switch $S_1$ is open and $S_2$ was closed\\
+
+\bigskip
+
+At $t=0^{+}$ The capacitor is charged. Thus, it acts as a voltage source.The inductor acts as the current source.
+
+\bigskip
+
+\begin{figure}[ht]
+  \centering
+      \input{2023/EC/44/figs/ckt3}
+  \caption{$S_1$ is open and $S_2$ is closed}
+\end{figure}
+
+\bigskip
+
+By Superposition Theorem\\
+\bigskip
+Case (i):
+\begin{figure}[ht]
+  \centering
+
+      \input{2023/EC/44/figs/ckt4}
+
+  \caption{Circuit 4}
+\end{figure}
+
+\begin{align}
+     \brak{\frac{25\brak{Ls}}{25 + Ls} + \frac{1}{sC}}i_{c}^1 \brak{s} + \frac{V_c \brak{0^-}}{s} = 0\\
+     i_{c}^1\brak{s} =  -\frac{V_c\brak{0^-}}{s} \brak{\frac{25sC+LCs^2}{25LCs^2 +Ls + 25}}\\
+     i_{c}^1\brak{s} =  -\brak{\frac{5+0.2 s}{0.25s^2 +s + 25}} \label{eq:eq.EC.44.1}
+\end{align}
+
+\newpage
+Case (ii):
+
+\begin{figure}[ht]
+  \centering
+
+      \input{2023/EC/44/figs/ckt5}
+
+  \caption{Circuit 5}
+\end{figure}
+
+\begin{align}
+    Li_L \brak{0^-} + \brak{\frac{25}{25sC + 1} + Ls} i_{c}^2 \brak{s} = 0
+\end{align}
+\begin{align}
+     0.2 &= - \brak{\frac{25LCs^2 + Ls + 25}{25sC + 1}} i_{c}^2 \brak{s}\\
+    i_{c}^2 \brak{s} &= -\brak{\frac{0.05s + 0.2}{0.25s^2 + s + 25}}  \label{eq:eq.EC.44.2}
+\end{align}
+
+From eq \eqref{eq:eq.EC.44.1} and eq \eqref{eq:eq.EC.44.2}
+
+\begin{align}
+     i_c \brak{s} &= i_{c}^1 \brak{s} + i_{c}^2 \brak{s}\\
+     i_c \brak{s} &= - \brak{\frac{0.25s +5.2}{0.25s^2 + s + 25}} \label{eq:eq.EC.44.3}
+\end{align}
+
+Using Inverse Laplace Transform 
+
+From eq \eqref{eq:eq.EC.44.3}
+
+\begin{align}
+    i_{c} \brak{t} &= - e^{-2t} \brak{\cos\brak{4\sqrt{6}\, t} + \frac{18.8}{4\sqrt{6}}\sin{\brak{4\sqrt{6}\, t}}}\\
+    i_{c} \brak{0^+} &=-1A 
+\end{align}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=1.2\columnwidth]{2023/EC/44/figs/abd.png}
+   \caption{Plot of $i_c \brak{t}$ vs time}
+\end{figure}
+
+
+\begin{table}[ht]
+
+       \input{2023/EC/44/tables/table1}
+
+    \caption{Parameters}
+    \label{tab:Gate.ec.44.1}
+
+\end{table}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=1.2\columnwidth]{2023/EC/44/figs/ckt2.png}
+   \caption{Plot of $V_c(0^-)$ vs time}
+\end{figure}
+
+%\end{document}
+
+
+
