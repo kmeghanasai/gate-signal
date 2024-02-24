@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,onecolumn]{IEEEtran}
@@ -115,15 +116,16 @@ Let $x_1(t) = u(t + 1.5) - u(t - 1.5)$ and $x_2(t)$ is shown in the figure below
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{figs/gatefig.png}
+    \includegraphics[width=0.5\textwidth]{2023/EC/58/figs/gatefig.png}
     \caption{Figure}
     \label{fig:graph}
 \end{figure}
 
 \section*{Solution}
+\fi
 \begin{table}[htbp]
     \centering
-    \input{tables/tablegate.tex}
+    \input{2023/EC/58/tables/tablegate.tex}
     \caption{Input Parameters}
     \label{tab:gate_58table}
 \end{table}
@@ -165,7 +167,7 @@ Therefore, the value of $\int_{-\infty}^{\infty} y(t) \, dt$ is $15$
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/gate_x1.png}
+    \includegraphics[width=0.8\textwidth]{2023/EC/58/figs/gate_x1.png}
     \caption{Graph of \(x_1(t) = \text{rect}\left(\frac{t}{3}\right)\)}
     \label{fig:x_1_graph}
 \end{figure}
@@ -173,7 +175,7 @@ Therefore, the value of $\int_{-\infty}^{\infty} y(t) \, dt$ is $15$
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/gate_x2.png}
+    \includegraphics[width=0.8\textwidth]{2023/EC/58/figs/gate_x2.png}
     \caption{Graph of \(x_2(t) = \delta(t+3) + \text{rect}(2t) + 2\delta(t-2)\)}
     \label{fig:x_2_graph}
 \end{figure}
@@ -181,8 +183,8 @@ Therefore, the value of $\int_{-\infty}^{\infty} y(t) \, dt$ is $15$
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/gate_y.png}
+    \includegraphics[width=0.8\textwidth]{2023/EC/58/figs/gate_y.png}
     \caption{Graph of \(y(t)\)}
     \label{fig:x_2_graph}
 \end{figure}
-\end{document}
+%\end{document}
