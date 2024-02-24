@@ -1,0 +1,123 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\usepackage{circuitikz}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{GATE-2023, EC-35}
+\author{EE23BTECH11033- JASWANTH KILLANA}
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{Question}:\\
+In the circuit shown below, switch S was closed for a long time. If the switch is opened at t=0, the maximum magnitude of the voltage $V_R$ in volts is. (round off to nearest integer).\\
+\begin{figure}[th]
+\centering
+\includegraphics[width=\linewidth]{2023/EC/35/figs/gate.png}
+\caption{}
+\end{figure}
+\textbf{solution} :
+\fi
+\begin{table}[!ht]
+ \centering
+  \input{2023/EC/35/tables/table1.tex}
+   \caption{input parameters}
+   \label{GATE-2023,EC-35}
+   \end{table}
+ \begin{figure}[h!]
+   \centering
+   \begin{circuitikz}[american]
+       \draw (0,3) to [R,a^=$1\ohm$,v=$V_R$](3,3); 
+       \draw (0,3) to [V,a^=$2V$](0,0);
+       \draw (3,3) to [short](3,0);
+       \draw (0,0) to [short] (3,0);
+   \end{circuitikz}
+   \caption{steady state circuit}
+   \end{figure}
+\begin{align}
+ At, t=0^-
+\end{align}
+inductor acts as wire\\
+apply KVL 
+\begin{align}
+-2+1i\brak{0^-}&=0\\
+i\brak{0^-}&=2A
+\end{align}
+
+   \begin{figure}[h!]
+   \centering
+   \begin{circuitikz}[american]
+       \draw (0,3) to [R,a^=$2\ohm$,v=$V_R$](3,3); 
+       \draw (0,0) to [short](0,3);
+       \draw (3,3) to [V,a^=$2V$](3,0);
+       \draw (0,0) to [L,a^=$Ls$,i=$I\brak{s}$] (3,0);
+   \end{circuitikz}
+   \caption{s domain circuit fot $t>0$}
+   \end{figure}
+\begin{align}
+2I\brak{s}-2V+LsI\brak{s}&=0\\
+\implies I\brak{s}&=\frac{2}{s+2}A
+ \end{align}
+\begin{figure}[!ht]
+     \centering
+     \includegraphics[width=1\linewidth]{2023/EC/35/figs/fig.png}
+ \end{figure}
+ applying inverse laplace transform
+ \begin{align}
+  i\brak{t}&=2e^{-2t} u\brak{t}A\\
+  V_R\brak{t}&=-2i\brak{t}\\
+  \implies V_R\brak{t}&=-4 e^{-2t} u\brak{t}V
+ \end{align}  
+  As,
+ \begin{align}
+    t & \xrightarrow{} 0\\
+     \implies e^{-2t}&\xrightarrow{} 1\\
+     \abs{V_R\brak{max}}&=4V
+ \end{align}
+%\end{document}
