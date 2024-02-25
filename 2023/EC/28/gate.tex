@@ -59,5 +59,32 @@ A) $\sqrt{\pi} e^{\frac{\omega^2}{2}}$ \\
 B) $\frac{e^{\frac{-\omega^2}{4}}}{2\sqrt{\pi}}$ \\
 C) $\sqrt{\pi} e^{\frac{-\omega^2}{4}}$ \\
 D) $\sqrt{\pi} e^{\frac{-\omega^2}{2}}$\\
-\hfill Gate 2023 EC Question 28
+\hfill Gate 2023 EC Question 28\\
+\textbf{Solution}
+\fi
+\begin{align}
+x^{'}(t)=-2te^{-t^{2}}\\
+x^{'}(t)=-2tx(t)
+\end{align}
+doing fourier transform 
+\begin{align}
+j 2 \pi f X(f)= -2j\frac{d X(f)}{df}\\
+\int_{0}^{f} \frac{d X(f)}{X(f)}=\int_{0}^{f} \frac{2 \pi f df}{-2}\\
+\frac{X(f)}{X(0)}=e^{\frac{-\brak {2 \pi f}^{2}}{4}}\\
+X(0)=\int_{-\infty}^{\infty} x(t)\,dt = \sqrt{\pi}\\
+X(f)=\sqrt{\pi}e^{\frac{-\brak {2 \pi f}^2}{4}}\\
+X(f)=\sqrt{\pi}e^{-\brak{\pi f}^2}
+\end{align}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{2023/EC/28/figs/graph.png}
+    \caption{Graph of $e^{-t^2}$}
+    \label{fig:plot1}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{2023/EC/28/figs/graph1.png}
+    \caption{Graph of $X(f) = \sqrt{\pi}e^{-\pi^2f^2}$}
+    \label{fig:plot2}
+\end{figure}
 %\end{document}
