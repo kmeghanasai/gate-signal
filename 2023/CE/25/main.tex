@@ -1,0 +1,137 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{CE-25}
+\author{EE23BTECH11063 - Vemula Siddhartha}
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{Question}:\\
+The following function is defined over the interval $[-L,L]$:
+    $$f\brak{x}=px^4+qx^5$$
+It is expressed as a Fourier series,
+    $$f\brak{x}=a\brak{0}+\sum_{n=1}^{\infty}\cbrak{a\brak{n}\sin\brak{\frac{\pi n x}{L}}+b\brak{n}\cos\brak{\frac{\pi n x}{L}}}$$
+which options amongst the following are true?
+\begin{enumerate}[label=(\alph*)]
+    \item $a\brak{n}$, $n=1,2,..,\infty$ depend on $p$
+    \item $a\brak{n}$, $n=1,2,..,\infty$ depend on $q$
+    \item $b\brak{n}$, $n=1,2,..,\infty$ depend on $p$
+    \item $b\brak{n}$, $n=1,2,..,\infty$ depend on $q$
+\end{enumerate}
+\textbf{Solution:}
+\fi
+\begin{table}[h!]    
+    \centering
+    \input{2023/CE/25/tables/table.tex}
+    \caption{Parameters}
+    \label{tab:CE:25}
+\end{table}\\
+The complex exponential Fourier Series of $f\brak{x}$ is,
+\begin{align}
+    f\brak{x}&=\sum_{n=-\infty}^{\infty}c\brak{n}e^{j\frac{\pi nx}{L}}\\
+    \implies c\brak{n}&=\frac{1}{2L}\int_{-L}^{L}f\brak{x}e^{-j\frac{\pi n x}{L}}\;dx\\
+    c\brak{n}&=\frac{1}{2L}\int_{-L}^{L}\brak{px^4+qx^5}e^{-j\frac{\pi n x}{L}}\;dx
+\end{align}
+For $n=0$, 
+\begin{align}
+    c\brak{0}&=\frac{1}{2L}\int_{-L}^{L}\brak{px^4+qx^5}\;dx\\
+    &=\frac{pL^4}{5}
+\end{align}
+For $n\neq0$,
+\begin{align}
+    c\brak{n}&=\frac{1}{2L}\int_{-L}^{L}\brak{px^4+qx^5}e^{-j\frac{\pi n x}{L}}\;dx\label{eq:CE-25.1}\\
+    &=\frac{pL^4}{2}\brak{e^{j\pi n}-e^{-j\pi n}}\brak{\frac{1}{j\pi n}+\frac{12}{\brak{j\pi n}^3}+\frac{24}{\brak{j\pi n}^5}}\notag\\
+    &\;\;\;-\frac{pL^4}{2}\brak{e^{j\pi n}+e^{-j\pi n}}\brak{\frac{4}{\brak{j\pi n}^2}+\frac{24}{\brak{j\pi n}^4}}\notag\\
+    &\;\;\;-\frac{qL^5}{2}\brak{e^{j\pi n}+e^{-j\pi n}}\brak{\frac{1}{j\pi n}+\frac{20}{\brak{j\pi n}^3}+\frac{120}{\brak{j\pi n}^5}}\notag\\
+    &\;\;\;+\frac{qL^5}{2}\brak{e^{j\pi n}-e^{-j\pi n}}\brak{\frac{5}{\brak{j\pi n}^2}+\frac{60}{\brak{j\pi n}^4}+\frac{120}{\brak{j\pi n}^6}}\\
+    &=\brak{pL^4}\brak{-1}^n\brak{\frac{4}{\brak{\pi n}^2}-\frac{24}{\brak{\pi n}^4}}\notag\\
+    &\;\;\;-\brak{qL^5}\brak{-1}^n\brak{-\frac{j}{{\pi n}}+\frac{20j}{\brak{\pi n}^3}-\frac{120j}{\brak{\pi n}^5}}
+\end{align}
+Given,
+\begin{align}
+    f\brak{x}=a\brak{0}+\sum_{n=1}^{\infty}\cbrak{a\brak{n}\sin\brak{\frac{\pi n x}{L}}+b\brak{n}\cos\brak{\frac{\pi n x}{L}}}
+\end{align}
+Finding the Fourier Coefficient $a\brak{0}$,
+\begin{align}
+    a\brak{0}&=c\brak{0}\\
+    \implies a\brak{0}&=\frac{pL^4}{5}
+\end{align}
+We know,
+\begin{align}
+    \sin \theta&=\frac{e^{j\theta}-e^{-j\theta}}{2j}
+\end{align}
+Finding the Fourier Coefficients $a\brak{n}$,
+\begin{align}
+    a\brak{n}&=\frac{1}{L}\int_{-L}^{L}f\brak{x}\sin\brak{\frac{\pi nx}{L}}\;dx\\
+    a\brak{n}&=\frac{1}{L}\int_{-L}^{L}f\brak{x}\brak{\frac{e^{j\frac{\pi n x}{L}}-e^{-j\frac{\pi n x}{L}}}{2j}}\;dx\\
+    &=\frac{1}{2Lj}\int_{-L}^{L}f\brak{x}e^{j\frac{\pi n x}{L}}\;dx-\frac{1}{2Lj}\int_{-L}^{L}f\brak{x}e^{-j\frac{\pi n x}{L}}\;dx
+\end{align}
+\begin{align}
+    \implies a\brak{n}&=\frac{c\brak{-n}-c\brak{n}}{j}\\
+    a\brak{n}&=\brak{-2qL^5}\brak{-1}^{n}\brak{\frac{1}{\pi n}-\frac{2}{\brak{\pi n}^3}+\frac{120}{\brak{\pi n}^5}}
+\end{align}
+We know,
+\begin{align}
+    \cos\theta&=\frac{e^{j\theta}+e^{-j\theta}}{2}
+\end{align}
+Finding the Fourier Coefficients $b\brak{n}$,
+\begin{align}
+    b\brak{n}&=\frac{1}{L}\int_{-L}^{L}f\brak{x}\cos\brak{\frac{\pi nx}{L}}\;dx\\
+    b\brak{n}&=\frac{1}{L}\int_{-L}^{L}f\brak{x}\brak{\frac{e^{j\frac{\pi n x}{L}}+e^{-j\frac{\pi n x}{L}}}{2}}\;dx\\
+    &=\frac{1}{2L}\int_{-L}^{L}f\brak{x}e^{j\frac{\pi n x}{L}}\;dx+\frac{1}{2L}\int_{-L}^{L}f\brak{x}e^{-j\frac{\pi n x}{L}}\;dx\\
+    \implies b\brak{n}&=c\brak{-n}+c\brak{n}\\
+    b\brak{n}&=\brak{2pL^4}\brak{-1}^n\brak{\frac{4}{\brak{\pi n}^2}-\frac{24}{\brak{\pi n}^4}}
+\end{align}
+Hence, options \brak{\text{b}} and \brak{\text{c}} are correct.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{2023/CE/25/figs/Figure_1.png}
+    \caption{Fourier Series Approximation of $f\brak{x}$ for $p=5$, $q=2$, $L=0.08$}
+\end{figure}
