@@ -1,0 +1,113 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+ \newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+ \bibliographystyle{IEEEtran}
+ \vspace{3cm}
+ \title{\textbf{XE 71}}
+ \author{EE23BTECH11048-Ponugumati Venkata Chanakya$^{*}$% <-this % stops a space
+ }
+ \maketitle
+ \newpage
+ \bigskip
+ \renewcommand{\thefigure}{\theenumi}
+ \renewcommand{\thetable}{\theenumi}
+ \textbf{QUESTION:}
+ A spring mass system is shown in the figure . Take the value of acceleration  due to gravity as $g=9.81m/s^2$.The static deflection due to weight and the time period of the oscillations,respectively,are\\
+ \begin{figure}[h!]
+    \centering
+    \includegraphics[width = \columnwidth]{2023/XE/71/figs/xe_71_f1.png}
+\end{figure}
+\hfill{(GATE2023 XE)}\\
+\solution
+\fi
+\begin{enumerate}
+    \item Static deflection due to weight(sdw)\\
+    let x be sdw.\\0
+    At mean position in equilibrium\\
+    \ref{XE_71.t1}
+    \begin{align}
+        Mg&=kx\\
+        x&=39.24cm
+    \end{align}
+     \item Time period of oscillation\\
+     \begin{align}
+           F&=-kx\\
+           m\brak{\frac{d^2x}{dt^2}}&=-kx
+     \end{align}
+      Initial Conditions be at extreme  point of SHM
+      \begin{align}
+       x(0)&=0.3924 \label{XE_71.5}\\
+       \frac{dx}{dt}&=0 \text{ at } t=0 \text{ (released from rest)} \label{XE_71.6}
+        \end{align} 
+     Taking Laplace transform:
+     \begin{align}
+     m(s^2X(s)-sx(0)-mx'(0))+kX(s)&=0
+     \end{align}
+     \begin{align}
+      X(s) &= \frac{x(0)ms+mx'(0)}{ms^2 + k}\\
+      X(s)&=x(0)\frac{s}{s^2+\frac{k}{m}}+\brak{x'(0)\sqrt{\frac{k}{m}}}\frac{\sqrt{\frac{k}{m}}}{s^2+\brak{\sqrt{\frac{k}{m}}}^2}
+      \end{align}
+     Taking Inverse Laplace Transform:\\
+     \begin{align}
+     x(t)&=x(0)\cos\left(\sqrt{\frac{k}{m}}t\right)+\brak{x'(0)\sqrt{\frac{k}{m}}}\sin \brak{\sqrt{\frac{k}{m}}t}\\
+     \end{align}
+     Using \ref{XE_71.5} and \ref{XE_71.6} 
+     \begin{align}
+      x(t) &= 0.3924 \cos\left(\sqrt{\frac{k}{m}}t\right)\\
+      x(t)&=39.24 \sin\brak{5t+\frac{\pi}{2}} \text{ cm}
+     \end{align}
+    The static deflection due to weight and the time period of the oscillations,respectively are $39.24$ cm and $\frac{2\pi}{5}$ s
+\end{enumerate}
+ \begin{figure}[h!]
+    \centering
+    \includegraphics[width = \columnwidth]{2023/XE/71/figs/xe_71_f2.png}
+\end{figure}
+ \begin{table}[!ht]
+    \centering
+        \input{2023/XE/71/Table/table.tex}
+    \caption{input parameters}
+     \label{XE_71.t1}
+\end{table}
+%\end{document}
+
