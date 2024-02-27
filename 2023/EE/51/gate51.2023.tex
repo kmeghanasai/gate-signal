@@ -81,7 +81,6 @@
    \node[circle,fill=black,inner sep=1.5pt,label=above:a] at (0,0) {};
     \node[circle,fill=black,inner sep=1.5pt,label=above:b] at (0,4) {};
     \end{circuitikz}\\[4pt]
-
 \solution 
 \fi
 By source transforming the given circuit we get\\[2pt]
@@ -99,7 +98,6 @@ By source transforming the given circuit we get\\[2pt]
    \node[circle,fill=black,inner sep=1.5pt,label=above:a] at (0,0) {};
     \node[circle,fill=black,inner sep=1.5pt,label=above:b] at (0,4) {};
     \end{circuitikz} \\[2pt]
-
 Solving using sinusoidal steady state analysis,
 \begin{circuitikz}[american]
     % Draw the circuit components
@@ -115,7 +113,6 @@ Solving using sinusoidal steady state analysis,
    \node[circle,fill=black,inner sep=1.5pt,label=above:a] at (0,0) {};
     \node[circle,fill=black,inner sep=1.5pt,label=above:b] at (0,4) {};
     \end{circuitikz} 
-
 Applying KVL we get,
 \begin{align}
     10 \angle 45^\circ-(j\omega L)I_x-10I_x+4I_x-10I_x-(\frac{1}{j\omega C})I_x=0
@@ -143,11 +140,8 @@ Substituting $\ref{eq:equation}$ and values of $\omega C$ and $\omega L$
 \begin{align}
     V_{ab}=12.5\sin{1000t}
 \end{align}
-
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\columnwidth]{2023/EE/51/figs/gate.png} % Include your image file here
+  \includegraphics[width=\columnwidth]{2023/EE/51/figs/gate.png} % Include your image file here
   \label{fig:example}
 \end{figure}
-
-
