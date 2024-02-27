@@ -1,0 +1,97 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+ \newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+ \bibliographystyle{IEEEtran}
+ \vspace{3cm}
+ \title{\textbf{AE 42}}
+ \author{EE23BTECH11048-Ponugumati Venkata Chanakya$^{*}$% <-this % stops a space
+ }
+ \maketitle
+ \newpage
+ \bigskip
+ \renewcommand{\thefigure}{\theenumi}
+ \renewcommand{\thetable}{\theenumi}
+ \textbf{QUESTION:}
+Consider the equation $\frac{dy}{dx}+ay=\sin{\omega x}$,where $a$ and $\omega$ are constants.Given $y=1$ at $x=0$, correct all the correct statement(s) from the following as $x\to \infty$.
+\begin{enumerate}
+  \item[(A)]  $y \to 0$ if $a \neq 0$ \\ 
+  \item[(B)]  $y \to 1$ if $a = 0$\\
+  \item[(C)]  $y \to A\text{exp}(|a|x)$ if $a < 0$; A is constant\\
+  \item[(D)]  $y \to B \sin(\omega x+C)$ if $a>0$; B and C are constants\\
+\end{enumerate}
+ \hfill(GATE AE 2023)\\
+\solution:\\
+\fi
+  $y(0)=1$
+\begin{align}
+ \frac{dy}{dx}+ay &= \sin{\omega x}
+\end{align}
+ Taking laplace transform on both sides 
+  \begin{table}[!ht]
+    \centering
+        \input{2023/AE/42/Table/table.tex}
+    \caption{Laplace transform}
+    \label{tab:Gate_AE.42 }
+\end{table}
+\begin{align}
+    sY-y(0)+aY &= \frac{\omega}{\omega^2+s^2}\\
+    sY-1+aY &= \frac{\omega}{\omega^2+s^2}\\
+    \implies Y(s)&=\frac{1}{s+a} \brak{\frac{\omega}{\omega^2+s^2}+1}\\
+     Y(s)&=\frac{A}{s+a} +\frac{Bs+C}{\omega^2+s^2}
+ \end{align}
+ Taking inverse laplace transform on both sides 
+ \begin{align}
+      y(x) = \mathcal{L}^{-1}\{Y(s)\} &= A e^{-ax} + (B\cos(\omega x) + C\sin(\omega x))\\
+       y(x) = \mathcal{L}^{-1}\{Y(s)\} &= A e^{-ax} + B\sin(\omega x+C)
+ \end{align}
+ now as $x\to \infty$
+ \begin{enumerate}
+     \item $y \to 0$ if $a \neq 0$ is not true as $y$ depend on $a,\omega$
+     \item $y \to 1 $ if $ a=0$ is not true as y depend on $\omega$
+     \item $y \to A\text{exp}(|a|x)$ if $a < 0$ is true as $ B\sin(\omega x+C)$ is neglected compared to $A e^{-ax}$
+     \item $y \to B \sin(\omega x+C)$ if $a>0$; is true as $A e^{-ax} \to 0$ 
+     
+ \end{enumerate}
+  $\therefore$ C,D are correct options
+ 
+%\end{document}
