@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -123,25 +124,26 @@ A continuous time, band-limited signal $x\brak{t}$ has its Fourier transform des
 \begin{equation}
  X\brak{f} = \begin{cases} 
 1 - \frac{\abs{f}}{200} & \text{if } \abs{f} \leq 200 \\
-0 & \text{if } \abs{f} > 200 \label{eq: 1404}
+0 & \text{if } \abs{f} > 200 
 \end{cases}  \\
 \end{equation}
 The signal is uniformly sampled at a sampling rate of 600 Hz. The Fourier transform of the signal is $X_s\brak{f}$. What is the value of $\frac{X_s\brak{600}}{X_s\brak{500}}$? \\
 
 \textbf{Solution: }
+\fi
 
 \begin{table}[h]
  	\centering
  	\resizebox{6 cm}{!}{
- 		\input{tables/table.tex}
+ 		\input{2023/BM/33/tables/table.tex}
  	}
  	\caption{Input Parameters}
-    \label{tab:table_33}
+    \label{tab:tablenik_33}
  \end{table}
 
 \begin{align} 
 X_s\brak{f} &= \frac{1}{600} \sum_{k=-\infty}^{\infty} X\brak{f - 600k} \\
-\implies X_s\brak{f+600} &= \frac{X\brak{f}}{600} \end{align} Using \eqref{eq: 1404}
+\implies X_s\brak{f+600} &= \frac{X\brak{f}}{600} \end{align}  
 \begin{align} 
 X_s\brak{600} &= \frac{X\brak{0}}{600} \\
 \implies X_s\brak{600} &= \frac{1}{600} \\
@@ -152,17 +154,17 @@ X_s\brak{500} &= \frac{X\brak{-100}}{600} \\
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\columnwidth]{figs/f1.png}
+    \includegraphics[width=\columnwidth]{2023/BM/33/figs/f1.png}
     \caption{Plot of $X\brak{f}$}
     \label{fig:nikh1}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\columnwidth]{figs/f2.png}
+    \includegraphics[width=\columnwidth]{2023/BM/33/figs/f2.png}
     \caption{Plot of $X_s\brak{f}$}
     \label{fig:nikh2}
 \end{figure}
 
 
-\end{document}
+%\end{document}
