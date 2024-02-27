@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -81,7 +82,9 @@
     \node[circle,fill=black,inner sep=1.5pt,label=above:b] at (0,4) {};
     \end{circuitikz}\\[4pt]
 
-\solution By source transforming the given circuit we get\\[2pt]
+\solution 
+\fi
+By source transforming the given circuit we get\\[2pt]
 \begin{circuitikz}[american voltages,american currents]
     % Draw the circuit components
     \draw (0,0) -- (2,0);
@@ -147,5 +150,4 @@ Substituting $\ref{eq:equation}$ and values of $\omega C$ and $\omega L$
   \label{fig:example}
 \end{figure}
 
-\end{document}
 
