@@ -1,0 +1,105 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[a4,12pt,onecolumn]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{circuitikz}
+\usepackage{gvv}
+\title{Signals and Systems - Gate2023-EE-Q46}
+\author{EE23BTECH11014- Devarakonda Guna vaishnavi}
+
+\begin{document}
+\maketitle
+\textbf{Question}
+Consider the state-space description of an LTI system with matrices
+\begin{align*}
+A =  \myvec{0 & 1 \\ -1 & -2}, B=\myvec {0 \\ 1}, C =\myvec {3 & -2}, D= \myvec{1}.
+\end{align*}
+
+For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which the steady-state output of the system will be zero, is \underline{\hspace{2cm}} (Round off to the nearest integer).\\
+\hfill(GATE EE 2023)\\
+\solution\\
+\fi
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Parameter} & \textbf{Value} \\
+    \hline
+    System Matrix, \(A\) & 
+    \(
+    \myvec{
+        0 & 1 \\
+        -1 & -2
+    }
+    \) \\
+    \hline
+    Input Matrix, \(B\) & 
+    \(
+    \myvec{
+        0 \\
+        1
+    }
+    \) \\
+    \hline
+    Output Matrix, \(C\) & 
+    \(
+    \myvec{
+        3 & -2
+    }
+    \) \\
+    \hline
+    Feedthrough Matrix, \(D\) & \( \myvec{
+    1}
+    \) \\
+    \hline
+    Input Signal, \(u(t)\) & \(\sin(\omega t)\), \(\omega > 0\) \\
+    \hline
+\end{tabular}
+    \caption{Input Parameters}
+    \label{table:parameters}
+\end{table}
+The state-space representation of the system is given by:
+\begin{align}
+\dot{x}(t) &= Ax(t) + Bu(t) \\
+y(t) &= Cx(t) + Du(t)
+\end{align}
+Transfer function given by:
+\begin{align}
+T.F &= C\myvec {sI-A}^{-1}B + D \label{eq:gate46-1}\\
+\myvec{sI-A} &= \myvec {s & -1 \\  1  & s+2} \label{eq:gate46-2}\\
+\myvec{sI - A}^{-1} &= \frac{1}{s(s+2)+1} \myvec {s+2 & 1 \\ -1 & s}  \label{eq:gate46-3}
+\end{align}
+
+Referencing from equation \eqref{eq:gate46-3}, equation \eqref{eq:gate46-1} becomes 
+\begin{align}
+T.F &= \myvec{ \frac{3}{s^2+2s+1} & \frac{-2}{s^2+2s+1} } \myvec {s+2 & 1 \\ -1 & s} \myvec{0 \\ 1} + 1 \\
+&= \myvec{ \frac{3}{s^2+2s+1} & \frac{-2}{s^2+2s+1} }  \myvec{1 \\ s} + 1 \\
+&= \frac{s^2 + 4}{s^2 + 2s + 1} \\
+H(s) &= T.F \\
+H(s) &= \frac{s^2 + 4}{s^2+2s+1} \label{eq:gate46-8}
+\end{align}
+
+Substituting $s=j\omega$ in equation \eqref{eq:gate46-8},
+\begin{align}
+H(j\omega) &= \frac{4-(\omega)^2}{1+2j\omega-(\omega)^2}
+\end{align}
+
+Steady state output of system is zero:
+\begin{align}
+4-(\omega)^2 &= 0 \\
+\omega &= 2 \text{ rad/sec}
+\end{align}
+
