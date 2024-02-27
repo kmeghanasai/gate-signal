@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -123,11 +124,12 @@
 Let an input x[n] having discrete time Fourier transform
  $X(e^{j\omega})$  = $1 - e^{-j\omega} + 2e^{-3j\omega}$  be passed through an LTI system. The frequency response of the LTI system is  $H(e^{j\omega})$ = $1 - \frac{1}{2} e^{-2j\omega}$ . The output $y[n]$ of the system is \\  
 \solution
+\fi
 
  \begin{table}[h]
  	\centering
  	\resizebox{6 cm}{!}{
- 		\input{tables/table1.tex}
+ 		\input{2023/EC/48/tables/table1.tex}
  	}
  	\vspace{6 pt}
  	\caption{Parameters}
@@ -150,7 +152,7 @@ Y(e^{j\omega}) &= (1 - e^{-j\omega} + 2e^{-3j\omega}) \cdot \left(1 - \frac{1}{2
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width = \columnwidth]{figs/plotsss.png}
+    \includegraphics[width = \columnwidth]{2023/EC/48/figs/plotsss.png}
     \caption{$y(n)$ vs $n$}
     \label{fig:swag_plot}
 \end{figure}
@@ -158,7 +160,7 @@ Y(e^{j\omega}) &= (1 - e^{-j\omega} + 2e^{-3j\omega}) \cdot \left(1 - \frac{1}{2
 
 
 
-\end{document}
+%\end{document}
 
 
 
