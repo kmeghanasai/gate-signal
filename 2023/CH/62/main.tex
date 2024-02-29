@@ -1,4 +1,4 @@
-% \iffalse
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -61,10 +61,11 @@
 $$G_m(s) = \frac{1.05}{2s+1}exp(-s)$$
 At time $t = 0$, a step change of +1 unit is introduced in the input of this instrument.The time taken by the instrument to show an increase of 1 unit in its output is(rounded off to two decimal places). \\ \hfill(GATE CH 2023) \\
 \solution
+\fi
 
 \begin{table}[!h] 
 \centering
-\input{tables/table1}
+\input{2023/CH/62/tables/table1}
 \caption{Given parameters}
 \label{table:gate23ch62}
 \end{table}
@@ -115,9 +116,9 @@ By taking inverse laplce we get,
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\columnwidth]{figs/fig1.png}
+    \includegraphics[width=\columnwidth]{2023/CH/62/figs/fig1.png}
     \caption{y(t) = $1.05\sbrak{1-e^{\frac{t-1}{2}}}$}
     \label{fig:gate23ch62}
 \end{figure}
 
-\end{document}
+%\end{document}
