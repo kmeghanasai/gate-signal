@@ -1,0 +1,26 @@
+
+\begin{table}[htbp]
+\centering
+\renewcommand\thetable{1}
+\begin{tabular}{|c|m{3.5cm}|m{3cm}|}
+    \hline
+    \textbf{Variable} & \textbf{values} & \textbf{Description} \\
+    \hline
+    $x\brak{t}$ & $u\brak{t+1}-u\brak{t-1}$ & signal 1\\
+    \hline
+    $ y\brak{t} $ & $y\brak{t} = 
+    \begin{cases}
+        t-3 & ; 1\leq n \leq 5 \\
+        0 & ; otherwise \\
+    \end{cases}$ & signal 2\\
+    \hline
+    $X\brak{s}$ & $\int_{0}^{\infty}x\brak{t}e^{-st}dt$ & Laplace transform of $x\brak{t}$\\
+    \hline
+   $Y\brak{s}$ & $\int_{0}^{\infty}y\brak{t}e^{-st}dt$ & Laplace transform of $y\brak{t}$ \\
+    \hline
+    $\mathscr{L^{-1}} \{Z(s)\}$ &$f\brak{t-c}u\brak{t-c}=\mathscr{L^{-1}}\brak{e^{-cs}F\brak{s}} $& Inverse Laplace transform \\
+    \hline
+\end{tabular}
+\caption{Input Parameters}
+\label{tab:11.9.5.32}
+\end{table}
