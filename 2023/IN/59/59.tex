@@ -1,0 +1,100 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{gvv}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage{lscape}
+\usepackage{circuitikz}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{Gate 2023- Instrumentation Engineering}
+\author{EE23BTECH11037 - M Esha$^{*}$% <-this % stops a space
+}
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\vspace{3cm}
+\textbf{Question 59:} 
+The op amps in the circuit are ideal. The input signals are $V_{S1} = 3 + 0.10 \sin(300t), \text{V}$ and $V_{S2} = -2 + 0.11 \sin(300t)\, \text{V}$. The average value of the voltage $V_0$ is \underline{\hspace{1cm}} volts (rounded off to two decimal places).
+
+\begin{figure}[ht]
+\centering
+\resizebox{0.55\columnwidth}{!}{\input{59/figs/59fig}}
+\end{figure}
+\hfill{(GATE IN 2023)}\\
+\solution
+\begin{table}[h!]
+  \centering
+  \input{59/tables/59.t}
+  \caption{Input Parameters}
+    \label{tab:table1}
+\end{table}\\
+the current does not flow through op-amp. voltage drop by each R
+\begin{align}
+&= V_{s1}-V_{s2}
+\end{align}
+by KVL,
+\begin{align}
+V_{s2}-V_2&=V_{s1}-V_{s2}\\
+V_2&=2V_{s2}-V_{s1}\\
+V_1-V_{s1}&=V_{s1}-V_{s2}\\
+V_1&= 2V_{s1}-V_{s2}\\
+V_o&= \frac{V_1+V_2}{2}\\
+&=\frac{V_{s1}+V_{s2}}{2}\\
+&=\frac{3+0.10\sin(300t)+{-2}+0.11\sin(300t)}{2}\\
+&=0.5+ \frac{0.21\sin(300t)}{2}\\
+V_{avg}&=\frac{1}{T} \int_{0}^{T} V(t) \,dt\\
+&=\frac{300}{2\pi} \int_{0}^{\frac{2\pi}{300}} \left(0.5 + \frac{0.21 \sin(300t)}{2}\right) \, dt\\
+&=0.5
+\end{align}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\columnwidth]{59/figs/59fig.png}
+    \caption{line plot }
+    \label{fig:1}
+\end{figure}
+\end{document}
+
