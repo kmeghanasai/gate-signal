@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[a4,12pt,twocolumn]{IEEEtran}
@@ -143,62 +144,59 @@ columns=fullflexible
 \textbf{Question Gate 2023 EE:}
 For the signals x\brak{t} and y\brak{t} shown in the figure, $z\brak{t}=x\brak{t}*y\brak{t}$ is maximum at $t=T_1$. Then $T_1$ in seconds is .......... \brak{\text{Round off to the nearest integer}}\\
 
-\input{plot1.tex}
-\input{plot2.tex}
-
+\input{2023/EE/31/figs/codes/plot1.tex}
+\input{2023/EE/31/figs/codes/plot2.tex}
+\hfill (GATE EE 2023)
 \solution
-\input{gatetable.tex}
+\fi
+\input{2023/EE/31/figs/tables/gatetable.tex}
 Using laplace transform,
 \begin{align}
-z\brak{t} &=x\brak{t}*y\brak{t} \\
-Z\brak{s} &=X\brak{s}Y\brak{s} \\
-X\brak{s} &= \frac{1}{s} \brak{e^{s}-e^{-s}} \\
-Y\brak{s} &= \frac{2s+1}{s^2} \brak{e^{-s}-e^{-5s}}\\
-Z\brak{s} &= \frac{2s+1}{s^3} \brak{1-e^{-4s}-e^{-2s}+e^{-6s}}
+z\brak{t} &=x\brak{t}*y\brak{t}\label{eq:gate_ee_Q31.1} \\
+Z\brak{s} &=X\brak{s}Y\brak{s}\label{eq:gate_ee_Q31.2} \\
+X\brak{s} &= \frac{1}{s} \brak{e^{s}-e^{-s}} \label{eq:gate_ee_Q31.3}\\
+Y\brak{s} &= \frac{2s+1}{s^2} \brak{e^{-s}-e^{-5s}}\label{eq:gate_ee_Q31.4}\\
+Z\brak{s} &= \frac{2s+1}{s^3} \brak{1-e^{-4s}-e^{-2s}+e^{-6s}}\label{eq:gate_ee_Q31.5}
 \end{align}
 Now taking inverse laplace transform for each terms, $\mathscr{L^{-1}} \{Z(s)\}$
-\begin{multicols}{2}
 \begin{align}
-z\brak{t} &=\brak{2t+\frac{t^2}{2}} u\brak{t} \nonumber \\
-&\quad -\brak{2\brak{t-4}+\frac{\brak{t-4}^2}{2}}u\brak{t-4} \nonumber \\
-&\quad -\brak{2\brak{t-2}+\frac{\brak{t-2}^2}{2}}u\brak{t-2} \nonumber \\
-&\quad +\brak{2\brak{t-6}+\frac{\brak{t-6}^2}{2}}u\brak{t-6} \nonumber\\
-\end{align}
-\end{multicols}
+&= \left( 2t + \frac{t^2}{2} \right) u(t) \nonumber \\
+&\quad - \left( 2(t-4) + \frac{(t-4)^2}{2} \right)u(t-4) \nonumber \\
+&\quad - \left( 2(t-2) + \frac{(t-2)^2}{2} \right)u(t-2) \nonumber \\
+&\quad + \left( 2(t-6) + \frac{(t-6)^2}{2} \right)u(t-6) \nonumber
+\end{align}\label{eq:gate_ee_Q31.6}
 From the plot it is clear that $T_1=4$.\\
 \begin{figure}[h]
 \centering
-   \includegraphics[width=1\linewidth]{gate2023EE.png}
+   \includegraphics[width=1\linewidth]{2023/EE/31/figs/figs/gate2023EE.png}
    \caption{z\brak{t} vs. t}
    \label{fig:gate2023EE1}
  \end{figure}\\
 Now in time domain,
  \begin{align}
-z\brak{t} &=x\brak{t}*y\brak{t} = y\brak{t}*x\brak{t}\\
-z\brak{t} &=\int_{-\infty}^{\infty} y\brak{\tau}x\brak{t-\tau}d\tau
+z\brak{t} &=x\brak{t}*y\brak{t} = y\brak{t}*x\brak{t}\label{eq:gate_ee_Q31.7}\\
+z\brak{t} &=\int_{-\infty}^{\infty} y\brak{\tau}x\brak{t-\tau}d\tau\label{eq:gate_ee_Q31.8}
 \end{align}
 $x\brak{\tau}$ is an even signal,
 \begin{align}
-x\brak{\tau}= x\brak{-\tau}\\
+x\brak{\tau}= x\brak{-\tau}\label{eq:gate_ee_Q31.9}\\
  x\brak{-\tau}= 
     \begin{cases}
         1 & ; -1\leq -\tau \leq 1 \\
         0 & ; \text{otherwise} \\
-    \end{cases}
+    \end{cases}\label{eq:gate_ee_Q31.10}
     \end{align}
     
     \begin{align}
-    x\brak{-\tau} \xleftrightarrow{\text{Time shifting}} x\brak{t-\tau}\\
+    x\brak{-\tau} \xleftrightarrow{\text{Time shifting}} x\brak{t-\tau}\\\label{eq:gate_ee_Q31.11}
     x\brak{t-\tau}= 
     \begin{cases}
         1 & ; t-1\leq t-\tau \leq t+1 \\
         0 & ; \text{otherwise} \\
-    \end{cases}
+    \end{cases}\label{eq:gate_ee_Q31.12}
 \end{align}\\
 For $z\brak{t}$ to be maximum both $y\brak{\tau}$ and $x\brak{t-\tau}$ must be maximum,
 \begin{align}
 \implies t-1 &= 3 \quad \text{or} \quad t+1 = 5 \nonumber \\
 t &= T_1 = 4 \nonumber
 \end{align}
-
-\end{document}
