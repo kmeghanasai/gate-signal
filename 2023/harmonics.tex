@@ -64,4 +64,34 @@
  54 (C)   $2e^\frac{j5 \pi}{8}$\\
  55 (D)   $2e^\frac{j9 \pi}{8}$\\
 \hfill{(GATE 2023 EC)}\\               \solution                              \input{2023/EC/13/gateec131.tex}     \pagebreak
+\item In the diagram shown, the frequency of the sinusoidal source voltage $V_s$ is 50 Hz.The load voltage is 230 V (RMS), and the load impedance is $\frac{230}{\sqrt{2}}$+$j\frac{230}{\sqrt{2}}$ $\Omega$. The value of attenuator $A_1$=$\frac{1}{50\sqrt{2}}$.The multiplier output voltage $V_o=\frac{V_xV_y}{1V}$, where $V_x$ and $V_y$ are the inputs. The magnitude of the average value of the multiplier output $V_0$ is \hspace{3cm}\rule{5cm}{0.4pt} V
+
+\vspace{1cm}
+
+\begin{circuitikz}
+    \draw (0,0) to[sV, l=$V_s$] (0,3) -- (6,3) ;
+    \draw [european](6,3) to[R, l=Load ](6,0)  --(2,0)  ;
+     \draw (5.4,0) to  (5.1,0);
+    \draw (2,0) to[R, l=$1 \Omega$]   (0,0);
+    \draw (5.25,3) to (5.25,-4.75) -- (4.25,-4.75) ;
+    \draw  (4.25,-4) rectangle (3.25,-5) node [midway] {$A_1$};
+    \draw (0,0) node[ground]{};
+    \draw (4.75,0) to (4.75,-4.35) -- (4.25,-4.35);
+   \draw (3.25,-4.5) to (3,-4.5);
+    \draw (3,-4) rectangle(-0.5, -5) node [midway] {$+90^\circ$ phase  
+    shifter};
+    \draw (2.5,-4) to (2.5,-3.5) -- (3, -3.5)-- (3,-2.5) -- (2.5, -1.6339746) --(2,-2.5) -- (2,-3.5) -- (2.5,-3.5); 
+    \node at (2.25,-3.75) {$V_y$};
+    \draw (2, -2.5) to (3, -3.5);
+    \draw (3,-2.5) to (2,-3.5) ;
+    \draw (4,0) to (4,-3.25) -- (3,-3.25);
+     \node at (3.25,-3) {$V_x$};
+    \draw (2.5, -1.3)   to   (2.5, -1.6339746) ;
+    \node at (2.15,-1.3) {$V_o$};
+\end{circuitikz}
+
+\vspace{2cm}		
+\hfill{GATE 2023 IN}	
+\solution\\
+\input{2023/IN/61/main.tex}
 \end{enumerate}
