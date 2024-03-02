@@ -1,0 +1,9 @@
+\begin{circuitikz}[scale=1.5]
+    \draw
+    (0,0) to[short, -*] node[pos=0] {$\textgreater$} node[pos=0.7, below=1mm] {$y_1$} node[pos=0,above=1.5mm] {$1$} (1,0) to [short,-*] node[pos=0] {$\textgreater$} node[pos=0,above=2mm] {$G(s)$} (3,0) to [short,-] node[pos=0,below=1mm] {$y_2$} (3.5,0);
+    
+    \draw (3,0) to [out=-90,in=-90] node[pos=0.5] {$\textless$} node[pos=0.4,below=2mm] {$-1$} (1,0);
+    \draw (3,0) to [out=90,in=90] node[pos=0.5] {$\textless$} node[pos=0.4,above=2mm] {$-H(s)$} (1,0);
+    \node[left] at (0,0) {$D(s)$};
+    \node[right] at (3.5,0) {$Y_2(s)$};
+\end{circuitikz}
