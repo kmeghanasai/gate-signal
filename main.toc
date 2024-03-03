@@ -11,3 +11,4 @@
 \contentsline {chapter}{\numberline {9}Fourier transform}{239}{chapter.9}%
 \contentsline {chapter}{\numberline {10}FFT}{279}{chapter.10}%
 \contentsline {chapter}{\numberline {11}Filter Design}{285}{chapter.11}%
+\contentsline {chapter}{\numberline {A} Mason's Gain Formula}{289}{appendix.A}%
