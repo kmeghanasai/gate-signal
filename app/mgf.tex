@@ -1,0 +1,60 @@
+\begin{enumerate}[label=\thechapter.\arabic*,ref=\thechapter.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+
+\item{Mason's Gain Formula}\\
+
+Mason’s Gain Formula, also known as Mason’s Rule or the Signal Flow Graph Method, is a technique used in control systems. It provides a systematic way to analyze the transfer function of a LTI system, especially those with multiple feedback loops and complex interconnections.
+
+\begin{table}[!ht]
+\begin{tabular}{|c|c|}
+	\hline
+	\textbf{parameters} & \textbf{description}\\
+	\hline
+	$X(s)$ & input signal transfer function\\
+	\hline
+	$Y(s)$ & output signal transfer function\\
+	\hline
+	$N$ & Total number of forward paths\\
+	\hline
+	$P_i$ & Gain of the $i^{th}$ forward path\\
+	\hline
+	$\triangle$ & determinant of the graph\\
+	\hline
+	$\triangle_i$ & path factor for the $i^{th}$ path\\
+	\hline
+\end{tabular}
+\caption{Current Parameters}
+\end{table}
+\begin{align}
+T(s) &= \frac{Y(s)}{X(s)} = \frac{\sum_{i=1}^{N}P_i\triangle_i}{\triangle}
+\end{align}
+\newpage From the signal-flow graph, we identify:\\
+\begin{enumerate}
+\item Number of forward paths possible ($N$).\\
+\item Forward path gain for each path $P_{i}$.\\
+\item Number of individual loops in the system and there corresponding loop gain.\\
+\item Number of non-touching loops (i.e which do not share any common node) and their corresponding loop gain.
+\end{enumerate}
+
+\begin{table}[!ht]
+\begin{tabular}{|c|c|}
+	\hline
+	\textbf{parameters} & \textbf{description}\\
+	\hline
+	$L_i$ & Loop gain of the $i^{th}$ individual loop\\
+	\hline
+	$L^{'}_i$ & Loop gain of the $i^{th}$ non-touching loop\\
+	\hline
+\end{tabular}
+\caption{New Parameters}
+\end{table}
+\begin{align}
+\triangle_i &= 1 - \sum{L_i} \quad \text{($L_i$ that doesn't touch the forward path)}
+\end{align}
+\begin{align}
+\triangle = 1 + \sum L_i - \sum_i \Pi_{j=0}^i \brak{L^{'}_j} .
+\end{align}
+\end{enumerate}
+
