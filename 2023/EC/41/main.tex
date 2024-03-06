@@ -1,0 +1,123 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{adjustbox}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+\begin{document}
+\bibliographystyle{IEEEtran}
+
+\vspace{3cm}
+
+\title{}
+\author{EE23BTECH11024 - G.Karthik Yadav$^{*}$
+}
+\maketitle
+\newpage
+\bigskip
+
+\section*{GATE 2023 EC 41}
+\noindent 1. \hspace{2pt} A Closed loop systen is shown in the figure where $k>0$ and $\alpha>0$ .\\
+The Steady State error due to a ramp input $\brak{R\brak{s} = \alpha s^{-2}}$ is given by \hfill{(GATE 2023 EC 41)}
+
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=1.0\linewidth]{2023/EC/41/figs/question.png}
+    \label{fig: 23.EC.41.24.1}
+\end{figure}
+
+\begin{enumerate}
+\item $\frac{2\alpha}{k}$
+\item $\frac{\alpha}{k}$
+\item $\frac{\alpha}{2k}$
+\item $\frac{\alpha}{4k}$
+\end{enumerate}
+
+\solution\\
+\fi
+\begin{table}[ht]
+\input{2023/EC/41/tables/table}
+\end{table}
+\bigskip
+from table  Open loop transfer function $G\brak{s}$\\
+\begin{align}
+	G\brak{s} &= \frac{Y\brak{s}}{E\brak{s}} \label{24.2023.EC.41.1} \\
+        &= \frac{Y\brak{s}}{R\brak{s} - Y\brak{s}} \\
+        Y\brak{s} &= \frac{R\brak{s}G\brak{s}}{1 + G\brak{s}} \label{24.2023.EC.41.2}
+\end{align}
+
+from eq \ref{24.2023.EC.41.1} and eq \eqref{24.2023.EC.41.2}
+
+\begin{align}
+        G\brak{s} &= \frac{k}{s\brak{s +2}}  \label{24.2023.EC.41.3} \\ 
+        Y\brak{s} &= \frac{\alpha k s^{-2}}{k + s\brak{s+2}} \label{24.2023.EC.41.4} \\
+        E\brak{s} &= R\brak{s} - Y\brak{s}  \label{24.2023.EC.41.5} \\ 
+        E\brak{s} &= \frac{\alpha \brak{s+2}}{s\brak{k + s\brak{s+2}}}
+\end{align}
+
+By Taking Inverse Laplace Transform of eq \eqref{24.2023.EC.41.3} and eq\eqref{24.2023.EC.41.4}
+
+\begin{align}
+    g\brak{t} &= \frac{k\brak{1 - e^{-2t}}}{2} u\brak{t} \\
+        y\brak{t} &= \alpha t u\brak{t}- \frac{2\alpha}{k}u\brak{t} \\
+        \notag &+\frac{\alpha}{2k\sqrt{1-k}} \biggl(2\sqrt{1-k}e^{\sqrt{1-k}t-1}\\ 
+        \notag &+ 2\sqrt{1-k}e^{-\sqrt{1-k}t-1} \\
+        \notag &+ \brak{2-k}e^{\sqrt{1-k}t-1} - \brak{2-k}e^{-\sqrt{1-k}t-1} \biggr) u\brak{t}
+\end{align}
+
+\begin{align}
+        e\brak{t} &= r\brak{t} - y\brak{t} \\
+        &= \alpha t u\brak{t} - y\brak{t} \\
+        e\brak{t} &= \frac{2\alpha}{k}u\brak{t} \\
+        \notag &-\frac{\alpha}{2k\sqrt{1-k}} \biggl(2\sqrt{1-k}e^{\sqrt{1-k}t-1}\\ 
+        \notag &+ 2\sqrt{1-k}e^{-\sqrt{1-k}t-1} \\
+        \notag &+ \brak{2-k}e^{\sqrt{1-k}t-1} - \brak{2-k}e^{-\sqrt{1-k}t-1} \biggr) u\brak{t}
+\end{align}
+	
+
+\begin{align}
+    e_s &= \displaystyle\lim_{s\to 0}s E\brak{s} \\
+    &= \displaystyle\lim_{s\to 0} s \frac{R\brak{s}}{1 + G\brak{s}} \\
+    &= \displaystyle\lim_{s\to 0} \frac{\alpha \brak{s+2}}{s\brak{s+2} + k} \\
+    e_s &= \frac{2\alpha}{k}
+\end{align}
+
+
